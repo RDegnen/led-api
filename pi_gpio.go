@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"os/exec"
 )
 
@@ -17,12 +17,12 @@ func (pigs *piGPIO) setRGB(redValue string, greenValue string, blueValue string)
 	setBlue := exec.Command("pigs", "p", pigs.bluePin, blueValue)
 
 	if err := setRed.Run(); err != nil {
-		fmt.Println(err.Error())
+		log.Println(err.Error())
 	}
 	if err := setGreen.Run(); err != nil {
-		fmt.Println(err.Error())
+		log.Println(err.Error())
 	}
 	if err := setBlue.Run(); err != nil {
-		fmt.Println(err.Error())
+		log.Println(err.Error())
 	}
 }
